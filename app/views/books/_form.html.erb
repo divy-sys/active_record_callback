@@ -1,0 +1,14 @@
+<%= form_with(model: @book) do |book| %>
+
+<h4>Name</h4>
+<p><%= book.text_field :name %></p>
+
+<h4>Title</h4>
+<p><%= book.text_field :title %></p>
+
+<h4>User</h4>
+<p><%= book.collection_select :user_id, User.all, :id, :username %></p>
+
+<p><%= book.submit  %></p>
+
+<% end %>
