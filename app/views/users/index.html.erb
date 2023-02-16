@@ -1,0 +1,14 @@
+<h1>All Users</h1>
+
+<%= link_to "New User", new_user_path %>
+<%= link_to "New user", new_book_path %>
+
+<% @users.each do |user| %>
+
+<h4>Name <%= user.username %> </h4>
+
+<%= link_to "Show", user_path(user)  %> 
+<%= link_to "Edit", edit_user_path(user) %>
+<%= link_to "delete", user_path(user) , data: {turbo_method: :delete, turbo_confirm: "Are you sure want to delete ?"} %>
+
+<% end %>
